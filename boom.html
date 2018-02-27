@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>BOOM</title>
+</head>
+<body>
+    <style>
+        #boom{overflow-wrap:break-word}
+    </style>
+    <div id="boom">
+        <button onclick="generate();">ААААААААААА</button>
+    </div>
+    <script>
+        function generate(){
+            var rand = '';
+
+            for (var i = 0; i < 1000; i++){
+                rand += Math.round(Math.random()) ?
+                    String.fromCharCode(Math.round(Math.random() * 32 + 33)):
+                    String.fromCharCode(Math.round(Math.random() * 63 + 1040));
+            }
+            
+            document.querySelector('#boom').innerHTML = rand;
+        }
+    </script>
+</body>
+</html>
